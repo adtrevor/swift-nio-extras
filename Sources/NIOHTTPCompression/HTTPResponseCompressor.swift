@@ -341,8 +341,8 @@ private struct PartialHTTPResponse {
             head!.headers.remove(name: "transfer-encoding")
             head!.headers.replaceOrAdd(name: "content-length", value: "\(bodyLength)")
         } else if head != nil && head!.status.mayHaveResponseBody {
-            head!.headers.remove(name: "content-length")
-            head!.headers.replaceOrAdd(name: "transfer-encoding", value: "chunked")
+            // head!.headers.remove(name: "content-length")
+            // head!.headers.replaceOrAdd(name: "transfer-encoding", value: "chunked")
         }
 
         let response = (head, body, end)
